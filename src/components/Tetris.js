@@ -60,7 +60,7 @@ const Tetris = () => {
         </div>
 
         )}
-        <StartButton onClickHandler={startGame}/>
+        <StartButton callback={startGame}/>
       </aside>
     </StyledTetris>
   </StyledTetrisWrapper>
