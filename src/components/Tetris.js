@@ -18,10 +18,8 @@ const Tetris = () => {
   const [stage, setStage] = useStage(player, resetPlayer)
 
   const movePlayer = dir => {
-    console.log('movePlayer')
     if(!checkCollition(player, stage, {x: dir, y: 0})) {
       updatePlayerPos({x: dir, y: 0})
-      console.log(player)
     }
   }
 
@@ -45,7 +43,7 @@ const Tetris = () => {
   }
 
   const dropPlayer = () => {
-
+    drop()
   }
 
   const move = ({keyCode}) => {
@@ -55,7 +53,7 @@ const Tetris = () => {
       } else if (keyCode === 39) {
         movePlayer(1)
       } else if (keyCode === 40) {
-        drop()
+        dropPlayer()
       } else if (keyCode === 38) {
         playerRotate(stage, 1)
       }

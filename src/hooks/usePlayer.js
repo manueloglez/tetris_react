@@ -39,17 +39,15 @@ export const usePlayer = () => {
 
   const updatePlayerPos = ({x, y, collided}) => {
     setPlayer(prev => {
-      console.log(prev.pos.x, prev.pos.x += x)
       return {
         ...prev,
-        pos: {x: (prev.pos.x += x), y: (prev.pos.y += y)},
+        pos: {x: (prev.pos.x + x), y: (prev.pos.y + y)},
         collided,
       }
     })
   }
 
   const resetPlayer = useCallback(() => {
-    console.log('resetplayer')
     setPlayer({
       pos: {x: STAGE_WIDTH / 2 - 2, y: 0},
       tetromino: randomTetromino().shape,
